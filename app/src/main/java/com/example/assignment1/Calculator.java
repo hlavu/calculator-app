@@ -10,6 +10,7 @@ public class Calculator {
     private String displayOutput;
     private Boolean advancedMode;
 
+    // remove the operator and the right operand
     private void removeOperands(){
         values.remove(1);
         values.remove(1);
@@ -28,10 +29,12 @@ public class Calculator {
         int result;
 
         while (values.size() > 1) {
+            // get operator from ArrayList
             String operator = values.get(1);
 
             switch (operator) {
                 case "*":
+                    // set value of the first elem = result of the calculation
                     values.set(0, Integer.toString(Integer.parseInt(values.get(0)) * Integer.parseInt(values.get(2))));
                     removeOperands();
                     break;
